@@ -1,0 +1,15 @@
+@startuml
+participant Пользователь
+participant Бот
+participant Админ
+participant "Sendsay API" as Sendsay
+participant "Яндекс SMTP" as Yandex
+
+Пользователь ->> Бот: Оплачивает подписку
+Бот ->> Админ: Уведомление о новом чеке
+Админ ->> Бот: Подтверждает оплату
+Бот ->> Бот: Генерирует/извлекает промокод
+Бот ->> Sendsay: Запрос на отправку письма
+Sendsay ->> Yandex: Пересылка письма
+Yandex ->> Пользователь: Письмо с промокодом
+@enduml

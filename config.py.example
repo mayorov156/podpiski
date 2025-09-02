@@ -1,0 +1,15 @@
+# Пример конфигурационного файла
+# Скопируйте этот файл в config.py и заполните реальными данными
+
+API_TOKEN = "YOUR_BOT_TOKEN_HERE"  # Токен вашего Telegram бота
+ADMIN_CHAT_ID = -1000000000000  # ID админ-чата
+ADMIN_IDS = [123456789, 987654321]  # Список ID администраторов
+SUPPORT_LINK = "https://t.me/your_support"  # Ссылка на поддержку
+
+DATABASE_URL = "sqlite:///bot_database.db"  # URL базы данных
+
+GUIDE_URL = "https://t.me/your_channel"  # Ссылка на канал с гайдом
+CHANNEL_ID = -1000000000000  # ID канала для проверки подписки
+CHANNEL_URL = "https://t.me/your_channel"  # Ссылка на канал для подписки
+
+MIN_WITHDRAWAL_AMOUNT = 500  # Минимальная сумма для вывода в копейках (500 = 5.00₽)
