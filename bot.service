@@ -1,0 +1,15 @@
+[Unit]
+Description=Telegram Subscription Bot
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/var/www/bot
+Environment=PATH=/var/www/bot/venv/bin
+ExecStart=/var/www/bot/venv/bin/python main.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

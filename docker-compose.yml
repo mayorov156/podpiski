@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    container_name: telegram-subscription-bot
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    environment:
+      - PYTHONUNBUFFERED=1
+    depends_on:
+      - db
+    
+  db:
+    image: postgres:13
+    container_name: bot-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: bot_db
+      POSTGRES_USER: bot_user
+      POSTGRES_PASSWORD: bot_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
